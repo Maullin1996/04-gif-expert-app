@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AddCategory, GifGrid  } from './Components';
+import { AddCategory, DeleteCat, GifGrid  } from './Components';
 
 export const GifExpertApp = () => {
 
@@ -12,16 +12,29 @@ export const GifExpertApp = () => {
 
     }
 
+    const OnNewArray = ( NewArray ) => {
+        console.log( NewArray);
+
+    }
+
     return (
         <>
 
         <h1>GifExpertApp</h1>
+
+        <DeleteCat
+
+            DeleteCaregory={ (event) =>  OnNewArray(event) }
+        
+        />
 
         <AddCategory 
         
             onNewCategory = { (event) => onAddCategory(event) }
 
         />
+
+
 
 
 
