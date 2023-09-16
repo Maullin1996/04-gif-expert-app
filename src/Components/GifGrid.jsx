@@ -1,28 +1,25 @@
-import { useEffect, useState } from "react";
 import { GifItem } from "./GifItem";
-import { getGifs } from "../helpers/getGifs";
+import { useFetchGifs } from "../helpers/hooks/useFetchGifs";
 
 
 
 export const GifGrid = ({ category }) => {
 
-    const [images, setimages] = useState([]);
+    const { images, isLoading } = useFetchGifs(category);
 
-    const getImages = async() => {
-        const newImages = await getGifs( category );
-        setimages(newImages);
-
-    }
-
-    useEffect( () =>{
-        getImages();
-    }, [] )
+    console.log({images, isLoading});
 
     
     return (
         <>
 
             <h3>{ category }</h3>
+
+            {
+                isLoading && ( <h2> Cargando... </h2> )
+            }
+
+            {/* la compuerta and=&& es una forma de hacer un if corto con una sola condición */}
 
             <div className="card-grid">
 
@@ -41,7 +38,3 @@ export const GifGrid = ({ category }) => {
     )
 }
 
-/* El useEffect es un hook de react que sirve para disparar efectos
-segudarios, el cual es un procesp el cual  se quiere ejecutar cuando 
-algo sucesa ejemplo, cuando el counter cambie yo quiero disparar un
-efecto*/
