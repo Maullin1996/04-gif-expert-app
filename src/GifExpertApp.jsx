@@ -13,7 +13,15 @@ export const GifExpertApp = () => {
     }
 
     const OnNewArray = ( NewArray ) => {
-        console.log( NewArray);
+        const index = Categories.indexOf(NewArray);
+        if(index > -1) {
+            Categories.splice(index, 1);
+        }
+
+        setCategories([ ...Categories ]);
+
+        
+        //
 
     }
 

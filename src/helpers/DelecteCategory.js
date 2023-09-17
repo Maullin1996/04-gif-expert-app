@@ -1,5 +1,13 @@
-export const DelecteCategory = async(category) => {
+
+
+export const DelecteCategory = async() => {
+
+    //const newArrenge = ({})
+
+    }
+
+
   return (
     <div>DelecteCategory</div>
   )
-}
+
