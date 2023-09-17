@@ -1,5 +1,5 @@
 import { GifItem } from "./GifItem";
-import { useFetchGifs } from "../helpers/hooks/useFetchGifs";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 
 
 
