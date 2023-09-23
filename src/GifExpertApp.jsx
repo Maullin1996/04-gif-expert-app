@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { AddCategory, DeleteCat, GifGrid  } from './Components';
+import PropTypes from 'prop-types';
 
 export const GifExpertApp = () => {
 
@@ -13,15 +14,12 @@ export const GifExpertApp = () => {
     }
 
     const OnNewArray = ( NewArray ) => {
-        const index = Categories.indexOf(NewArray);
+    const index = Categories.indexOf(NewArray);
         if(index > -1) {
             Categories.splice(index, 1);
         }
-
-        setCategories([ ...Categories ]);
-
         
-        //
+        setCategories([ ...Categories ]);
 
     }
 
@@ -30,19 +28,21 @@ export const GifExpertApp = () => {
 
         <h1>GifExpertApp</h1>
 
-        <DeleteCat
 
-            DeleteCaregory={ (event) =>  OnNewArray(event) }
-        
-        />
 
         <AddCategory 
+
         
             onNewCategory = { (event) => onAddCategory(event) }
 
         />
 
 
+        {      
+            <DeleteCat 
+            DeleteCaregory={ (event) =>  OnNewArray(event) }
+            />
+        }
 
 
 
