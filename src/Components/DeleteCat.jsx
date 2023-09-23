@@ -23,7 +23,7 @@ export const DeleteCat = ({ DeleteCaregory }) => {
                 type = "text"
                 placeholder= "Delete gifs"
                 value = {inputValue}
-                onChange={ onInputCange }
+                onChange ={ onInputCange }
             />
         </form>
     )
