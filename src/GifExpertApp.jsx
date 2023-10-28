@@ -37,6 +37,7 @@ export const GifExpertApp = () => {
 
         />
 
+        <br/>
 
         {      
             <DeleteCat 
